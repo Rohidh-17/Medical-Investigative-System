@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "DegreeDetails";
+    Layout = "~/Views/_Admin.cshtml";
+}
+
+<h2>Degree Details</h2>
+<div ng-controller="DegreeController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtDegreeCode" ng-model="Degree.DegreeCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Degree</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtDegreeName" ng-model="Degree.DegreeName" placeholder="Enter Your Degree ">
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0">
+                            <thead>
+
+                                <tr>
+                                    <th>SNo</th>
+                                    <th>Degree Name</th>
+                                    <th>Edit/Delete</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="re in Record">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{re.DegreeName}} </td>
+                                   <td><a id="idEdit" ng-click="Edit(re.DegreeCode)">EDIT     </a>
+                                   <a id="idDelete" ng-click="Delete(re.DegreeCode)">DELETE    </a></td>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>

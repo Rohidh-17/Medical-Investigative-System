@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "HospitalApproval";
+    Layout = "~/Views/_Shared.cshtml";
+}
+
+<h2>HospitalApproval</h2>
+<div ng-controller="HospitalDetailsController">
+    <div class="col-xl-12">
+        <div class="card">
+           
+            <div class="row">
+                
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0">
+                            <thead>
+
+                                <tr>
+                                    <th>SNo</th>
+                                    <th>Hospital ID</th>
+                                    <th>Hospital Name</th>
+                                    <th>Address</th>
+                                    <th>Phone Number</th>
+                                    <th>Hospital Details</th>
+                                    <th>Accept</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="re in Record">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{re.HospitalID}} </td>
+                                    <td>{{re.HospitalName}} </td>
+                                    <td>{{re.Address}} </td>
+                                    <td>{{re.MobileNo}} </td>
+                                    <td>{{re.HospitalDetail}} </td>
+                                   <td><a id="idEdit" ng-click="HospitalDetailsLoad(re.HospitalCode)">ACCEPT</a>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+<div>
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtHospitalApprovalCode" ng-model="HospitalApproval.HospitalApprovalCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" readonly="true" id="txtHospitalID" ng-model="HospitalApproval.HospitalID" placeholder="Enter Hospital ID ">
+                        </div>
+                    </div>
+                    
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">HospitalName</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" readonly="true" id="txtHospitalName" ng-model="HospitalApproval.HospitalName" placeholder="Enter the Hospital Name ">
+                        </div>
+                    </div>
+
+                     
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" readonly="true" id="txtAddress" ng-model="HospitalApproval.Address" placeholder="Enter the Address">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Mobile Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" readonly="true" id="txtMobileNo" ng-model="HospitalApproval.MobileNo" placeholder="Enter the Mobile Number">
+                        </div>
+                    </div>
+                      <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital Detail</label>
+                        <div class="col-sm-9">
+                            <textarea type="text" class="form-control" readonly="true" id="txtHospitalDetail" ng-model="HospitalApproval.HospitalDetail" placeholder="Enter the Hospital Detail"> </textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Approval()">Approve</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "HospitalDetails";
+    Layout = "~/Views/_Admin.cshtml";
+}
+
+<h2>Hospital Details</h2>
+<div ng-controller="HospitalDetailsController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtHospitalCode" ng-model="Hospital.HospitalCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtHospitalID" ng-model="Hospital.HospitalID" placeholder="Enter Hospital ID ">
+                        </div>
+                    </div>
+                    
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">HospitalName</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtHospitalName" ng-model="Hospital.HospitalName" placeholder="Enter the Hospital Name ">
+                        </div>
+                    </div>
+
+                     
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtAddress" ng-model="Hospital.Address" placeholder="Enter the Address">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">City</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtCity" ng-model="Hospital.City" placeholder="Enter the City">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Mobile Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtMobileNo" ng-model="Hospital.MobileNo" placeholder="Enter the Mobile Number">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Email ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtEmailID" ng-model="Hospital.EmailID" placeholder="Enter the Email ID">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="txtPassword" ng-model="Hospital.Password" placeholder="Enter the Password">
+                        </div>
+                    </div>
+                      <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital Detail</label>
+                        <div class="col-sm-9">
+                            <textarea type="text" class="form-control" id="txtHospitalDetail" ng-model="Hospital.HospitalDetail" placeholder="Enter the Hospital Detail"> </textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MDS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <script src="~/js/toast/jquery.min.js"></script>
+    <link href="~/js/toast/toastr.css" rel="stylesheet" />
+    <script src="~/js/toast/toastr.js"></script>
+    <script src="~/js/toast/angular.min.js"></script>
+    <script src="~/js/toast/Admin.js"></script>
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <link href="~/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+    <div ng-app="MyApp" ng-cloak>
+        <div id="layout-wrapper">
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+
+
+                        <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+                        <form class="app-search d-none d-lg-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="bx bx-search-alt"></span>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                    <div class="d-flex">
+
+                        <div class="dropdown d-inline-block d-lg-none ms-2">
+                            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="dropdown d-none d-lg-inline-block ms-1">
+                            <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                                <i class="bx bx-fullscreen"></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                
+                                <span  class="d-none d-xl-inline-block ms-1" key="t-henry">Logout</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item text-danger" href="#"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i><span onclick="Logout()" key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <script>
+                function Logout() {
+                    window.location.href = "AdminLoginPage";
+                }
+            </script>
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+                    <div id="sidebar-menu">
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title" key="t-menu">Menu</li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Hospital Menus</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="true">
+                                    <li><a href="HospitalApproval" key="t-horizontal">Hospital Approval</a>  </li>
+                                    <li><a href="PatientDetails" key="t-horizontal">Patient Details</a>
+                                        <li><a href="TreatmentDetails" key="t-horizontal">Treatment Details</a> </li>
+                                        <li><a href="XRayDetails" key="t-horizontal">XRay Details</a> </li>
+                                        <li><a href="BloodPressureDetails" key="t-horizontal">Blood Pressure Details</a> </li>
+                                        <li><a href="CXRaysDetails" key="t-horizontal">C XRays Details</a> </li>
+                                        <li><a href="CTScanDetails" key="t-horizontal">CT Scan Details</a> </li>
+                                        <li><a href="ReportDetails" key="t-horizontal">Patient Report</a>  </li>
+                                        <li><a href="BloodPressureReportDetails" key="t-horizontal">Blood Pressure Report Details</a>  </li>
+                                        <li><a href="XRayReportDetails" key="t-horizontal">XRay Report Details</a>  </li>
+
+
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @RenderBody()
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script>
+                                © MDS.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Design & Develop by MDS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                    <h5 class="m-0 me-2">Settings</h5>
+
+                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                </div>
+                <hr class="mt-0" />
+                <h6 class="text-center mb-0">Choose Layouts</h6>
+            </div>
+        </div>
+        <div class="rightbar-overlay"></div>
+        <script src="~/assets/libs/jquery/jquery.min.js"></script>
+        <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="~/assets/libs/node-waves/waves.min.js"></script>
+
+        <script src="~/assets/js/app.js"></script>
+    </div>
+</body>
+</html>

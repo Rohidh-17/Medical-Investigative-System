@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "XRayReportDetails";
+    Layout = "~/Views/_Shared.cshtml";
+}
+
+<h2>XRayReportDetails</h2>
+<div ng-controller="XRayReport_Controller">
+    <section class="team-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="member-form comment-respond">
+                        <h2>@ViewBag.Heading</h2>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <th style="font-size:larger">Patient ID</th>
+                                        <th style="font-size:larger">Patient Name</th>
+                                        <th style="font-size:larger">Blood Pressure Amount</th>
+                                        <th style="font-size:larger">CT Amount</th>
+                                        <th style="font-size:larger">XRay Amount</th>
+                                        <th style="font-size:larger">Urine Test Amount</th>
+                                        <th style="font-size:larger">Doctor Fees</th>
+                                        <th style="font-size:larger">Total Amount</th>
+                                        <th style="font-size:larger">Paid Amount</th>
+
+
+                                    </tr>
+                                    <tr>
+                                        <tr class="cart_item" ng-repeat="re in Record">
+                                            <td class="product-total"><span class="amount">{{re.PatientID}}</span></td>
+                                            <td class="product-total"><span class="amount">{{re.PatientName}}</span></td>
+                                            <td class="product-total"><span class="amount">{{re.BloodPressureAmount}}  </span></td>
+                                            <td class="product-total"><span class="amount">{{re.CTAmount}}   </span></td>
+                                            <td class="product-total"><span class="amount">{{re.XRayAmount}}  </span></td>
+                                            <td class="product-total"><span class="amount">{{re.UrineTestAmount}}  </span></td>  
+                                            <td class="product-total"><span class="amount">{{re.DoctorFees}}  </span></td>                                            
+                                            <td class="product-total"><span class="amount">{{re.TotalAmount}}  </span></td>                                            
+                                            <td class="product-total"><span class="amount">{{re.PaidAmount}}  </span></td>                                            
+                                                                                      
+                                        </tr>
+                                    </tr>
+                                    
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

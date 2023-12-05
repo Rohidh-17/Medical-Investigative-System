@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "XRayDetails";
+    Layout = "~/Views/_Shared.cshtml";
+}
+
+<h2>XRay Details</h2>
+<div ng-controller="XRayDetailsController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtXRayCode" ng-model="XRay.XRayCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientID" ng-model="XRay.PatientID" placeholder="Enter Patient ID ">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">PatientName</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientName" ng-model="XRay.PatientName" placeholder="Enter the Patient Name ">
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">BloodPressureAmount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtBloodPressureAmount" ng-model="XRay.BloodPressureAmount" placeholder="Enter the Blood Pressure Amount">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">CT Amount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtCTAmount" ng-model="XRay.CTAmount" placeholder="Enter the CT Amount">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">XRay Amount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtXRayAmount" ng-model="XRay.XRayAmount" placeholder="Enter the XRay Amount">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Urine Test Amount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtUrineTestAmount" ng-model="XRay.UrineTestAmount" placeholder="Enter the Urine Test Amount">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Doctor Fees</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtDoctorFees" ng-model="XRay.DoctorFees" placeholder="Enter the Doctor Fees">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Bed Charges</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtBedCharges" ng-model="XRay.BedCharges" placeholder="Enter the Bed Charges">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Other Charges</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtOtherCharges" ng-model="XRay.OtherCharges" placeholder="Enter the Other Charges">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Total Amount</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" onclick="Sum()" id="txtTotalAmount" ng-model="XRay.TotalAmount" placeholder="Enter the Total Amount">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">PaidAmount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtPaidAmount" ng-model="XRay.PaidAmount" placeholder="Enter the Paid Amount">
+                        </div>
+                    </div>
+                    <script>
+                        function Sum() {
+                            txtTotalAmount.value = (parseInt(txtBloodPressureAmount.value) + parseInt(txtCTAmount.value) +
+parseInt(txtXRayAmount.value) + parseInt(txtUrineTestAmount.value) + parseInt(txtDoctorFees.value) + parseInt(txtBedCharges.value) + parseInt(txtOtherCharges.value));
+                        }
+                    </script>
+
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

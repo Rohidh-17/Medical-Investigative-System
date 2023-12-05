@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "DegreeDetails";
+    Layout = "~/Views/_Admin.cshtml";
+}
+
+<h2>Doctor Details</h2>
+<div ng-controller="DoctorController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtDoctorCode" ng-model="DoctorRegis.DoctorCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Doctor Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtDoctorName" ng-model="DoctorRegis.DoctorName" placeholder="Enter Doctor Name ">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Degree Name</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="DoctorRegis.DegreeName" id="txtDegreeName">
+                                <option value="">--SELECT--</option>
+                                <option ng-repeat="re in Degree" value="{{re.DegreeCode}}">{{re.DegreeName}}</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Speciality</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtSpeciality" ng-model="DoctorRegis.Speciality" placeholder="Enter the Speciality ">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtHospitalName" ng-model="DoctorRegis.HospitalName" placeholder="Enter the Hospital Name ">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtAddress" ng-model="DoctorRegis.Address" placeholder="Enter the Address">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">City</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtCity" ng-model="DoctorRegis.City" placeholder="Enter the City">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Mobile Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtMobileNo" ng-model="DoctorRegis.MobileNo" placeholder="Enter the Mobile Number">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Email ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtEmailID" ng-model="DoctorRegis.EmailID" placeholder="Enter the Email ID">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="txtPassword" ng-model="DoctorRegis.Password" placeholder="Enter the Password">
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+</div>

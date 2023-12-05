@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "BloodPressureDetails";
+    Layout = "~/Views/_Shared.cshtml";
+}
+
+<h2>Blood Pressure Details</h2>
+<div ng-controller="BloodPressureController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtBloodPressureCode" ng-model="BloodPressure.BloodPressureCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Bill Date</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtBillDate" ng-model="BloodPressure.BillDate" placeholder="Enter the Bill Date ">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientID" ng-model="BloodPressure.PatientID" placeholder="Enter the Patient ID">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientName" ng-model="BloodPressure.PatientName" placeholder="Enter the Patient Name ">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Treatment ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtTreatmentID" ng-model="BloodPressure.TreatmentID" placeholder="Enter the Treatment ID">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Treatment Date</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtTreatmentDate" ng-model="BloodPressure.TreatmentDate" placeholder="Enter the Treatment Date">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Doctor Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtDoctorName" ng-model="BloodPressure.DoctorName" placeholder="Enter the Doctor Name">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Pressure</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPressure" ng-model="BloodPressure.Pressure" placeholder="Enter the Pressure">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Blood Pressure Rate</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtBPRate" ng-model="BloodPressure.BPRate" placeholder="Enter the BP Rate">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Amount</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtAmount" ng-model="BloodPressure.Amount" placeholder="Enter the Amount">
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+

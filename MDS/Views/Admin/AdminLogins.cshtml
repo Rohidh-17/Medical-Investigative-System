@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MDS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <script src="~/js/toast/jquery.min.js"></script>
+    <link href="~/js/toast/toastr.css" rel="stylesheet" />
+    <script src="~/js/toast/toastr.js"></script>
+    <script src="~/js/toast/angular.min.js"></script>
+    <script src="~/js/toast/Admin.js"></script>
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <link href="~/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body data-sidebar="dark">
+    <div ng-app="MyApp" ng-cloak>
+        <div id="layout-wrapper">
+
+
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <h1 style="flex-align: center">Admin Login</h1>
+                    <div class="row">
+                        <div ng-controller="HospitalLoginController">
+                            <div class="col-xl-24">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row mb-4">
+                                                <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">UserName</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="txtUserName"   placeholder="Enter Your User Name ">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Password</label>
+                                                <div class="col-sm-9">
+                                                    <input type="password" class="form-control" id="txtPassword"   placeholder="Enter Your Password ">
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-end">
+                                                <div class="col-sm-9">
+                                                    <div>
+                                                        <button type="button" class="btn btn-primary w-md" onclick="Login()">Login</button>
+                                                        &nbsp;&nbsp;&nbsp;
+                            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+                <script>
+                    function Login() {
+                        if (txtUserName.value === "Admin" && txtPassword.value === "12345")
+                            window.location.href = "DegreeDetails";
+                        else {
+                            alert("Check the UserName and Password");
+                            txtUserName.focus();
+                        }
+                    }
+                </script>
+                <div class="rightbar-overlay"></div>
+                <script src="~/assets/libs/jquery/jquery.min.js"></script>
+                <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="~/assets/libs/metismenu/metisMenu.min.js"></script>
+                <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+                <script src="~/assets/libs/node-waves/waves.min.js"></script>
+
+                <script src="~/assets/js/app.js"></script>
+            </div>
+</body>
+</html>

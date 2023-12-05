@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "PatientDetails";
+    Layout = "~/Views/_Shared.cshtml";
+}
+
+<h2>PatientDetails</h2>
+<div ng-controller="PatientDetailsController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtPatientCode" ng-model="Patient.PatientCode" />
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital ID</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="Patient.HospitalID" id="txtHospitalID">
+                                <option value="">--SELECT HOSPITAL ID--</option>
+                                <option ng-repeat="re in Hospital" value="{{re.HospitalCode}}">{{re.HospitalID}}</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Hospital Name</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="Patient.HospitalName" id="txtHospitalName">
+                                <option value="">--SELECT HOSPITAL NAME--</option>
+                                <option ng-repeat="re in Hospital" value="{{re.HospitalCode}}">{{re.HospitalName}}</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientID" ng-model="Patient.PatientID" placeholder="Enter Your Patient ID ">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientName" ng-model="Patient.PatientName" placeholder="Enter Your Patient Name">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtAddress" ng-model="Patient.Address" placeholder="Enter Your Address">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">City</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtCity" ng-model="Patient.City" placeholder="Enter Your City">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Mobile No</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtMobileNo" ng-model="Patient.MobileNo" placeholder="Enter Your Mobile Number">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Diseases Detail</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="txtDiseasesDetail" rows="5" ng-model="Patient.DiseasesDetail" placeholder="Enter Your Diseases Details"></textarea>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "CXRaysDetails";
+    Layout = "~/Views/_Shared.cshtml";
+}
+
+<h2>XRay Details</h2>
+<div ng-controller="CXRaysController">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <form>
+
+                    <input type="hidden" id="txtCXRaysCode" ng-model="XRays.CXRaysCode" />
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Bill No</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtBillNo" ng-model="XRays.BillNo" placeholder="Enter the Bill Number ">
+                        </div>
+                    </div>
+                    
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Bill Date</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtBillDate" ng-model="XRays.BillDate" placeholder="Enter the Bill Date ">
+                        </div>
+                    </div>
+
+                     
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientID" ng-model="XRays.PatientID" placeholder="Enter the Patient ID">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Patient Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtPatientName" ng-model="XRays.PatientName" placeholder="Enter the Patient Name">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Treatment ID</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtTreatmentID" ng-model="XRays.TreatmentID" placeholder="Enter the Treatment ID">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Treatment Date</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtTreatmentDate" ng-model="XRays.TreatmentDate" placeholder="Enter the Treatment Date">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Doctor Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtDoctorName" ng-model="XRays.DoctorName" placeholder="Enter the Doctor Name">
+                        </div>
+                    </div>
+                      
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">XRay Type</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="XRays.XRayType" id="txtXRayType">
+                                <option value="">--SELECT XRay Type--</option>
+                                <option value="AbdminalXRays">Abdminal XRays</option>
+                                <option value="BariumXRays">Barium XRays</option>
+                                <option value="BoneXRays">Bone XRays</option>
+                                <option value="ChestXRays">Chest XRays</option>
+                                <option value="DentalXRays">Dental XRays</option>
+                                <option value="HardXRays">Hard XRays</option>
+                                <option value="JointXRays">Joint XRays</option>
+                                <option value="PelvisXRays">pelvis XRays</option>
+                                <option value="SkullXRays">Skull XRays</option>
+                                <option value="ThoroareicXRays">Thoroareic XRays</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Result Details</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtResultDetails" ng-model="XRays.ResultDetails" placeholder="Enter the Result Details">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Amount</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtAmount" ng-model="XRays.Amount" placeholder="Enter the Amount">
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="button" class="btn btn-primary w-md" ng-click="Save()">Save</button>
+                                &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary w-md" ng-click="ModelInitialize()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
